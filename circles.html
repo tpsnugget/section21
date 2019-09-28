@@ -12,19 +12,29 @@
            crossorigin="anonymous"></script> -->
    <script type="text/paperscript" canvas="myCanvas">
 
+var circles = []
+
    function onKeyDown(e) {
                                     <!-- view comes from Paper.js -->
       var x = Math.floor(Math.random() * view.size.width)
       var y = Math.floor(Math.random() * view.size.height)
       var mySize = Math.floor(Math.random() * 75)
    
-      var circle = new Path.Circle(new Point(x, y), mySize)
+      var circle = new Path.Circle(new Point(x, y), 75)
    
       var r = Math.floor(Math.random() * 256)
       var g = Math.floor(Math.random() * 256)
       var b = Math.floor(Math.random() * 256)
       var myColor = 'rgb(' + r + ", " + g + ", " + b + ")"
       circle.fillColor = myColor
+      circles.push(circle)
+   }
+
+   function onFrame() {
+      for (var i = 0; i < circles.length; i++) {
+         circles[i].fillColor.hue += 1
+         circles[i].scale(0.9)
+      }
    }
 
    </script>

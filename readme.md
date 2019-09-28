@@ -7,5 +7,6 @@
 
 # Version 3: Section 21: Chapter 235: Todo List: Adding Keypress Events
    Add a circle when the user hits any key (letter keys to keep it simpler)
-   Animate that circle
    Add circle to random coordinate
+
+# Version 4: Section 21: Chapter 236: Todo List: Paper.js Animations
